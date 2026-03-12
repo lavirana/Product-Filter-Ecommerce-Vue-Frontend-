@@ -1,8 +1,5 @@
 # ecommerce-vue
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
 
 ## Project Setup
 
