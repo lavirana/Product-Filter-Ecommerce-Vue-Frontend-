@@ -1,5 +1,14 @@
 <script setup>
-const emit = defineEmits(["category"])
+import { ref, watch } from "vue"
+
+const min = ref(0)
+const max = ref(5000)
+
+const emit = defineEmits(["price", "category"])
+
+watch([min, max], () => {
+emit("price", { min: min.value, max: max.value })
+})
 
 const categories = [
 "all",
@@ -20,6 +29,12 @@ v-for="cat in categories"
 >
 {{cat}}
 </button>
+
+<h3>Price Range</h3>
+
+<input type="number" v-model.number="min" placeholder="Min Price"/>
+<input type="number" v-model.number="max" placeholder="Max Price"/>
+
 
 </div>
 </template>
